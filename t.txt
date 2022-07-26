@@ -1,0 +1,13 @@
+Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
+Office_friend: amal,kasunssckinfo@gmail.com,clerk,1900/2/6
+Official:nimal,nimal @gmail.com,ceo
+Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/2/4
+Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
+Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
+Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
+Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
+Personal:shanu,sha,shanu@gmail.com,1998/7/26
+Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/26
+Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/
+Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/26
+Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/27
