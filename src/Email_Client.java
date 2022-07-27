@@ -1,9 +1,9 @@
 import java.io.Console;
+import java.util.*;
 
 public class Email_Client {
 
     public static void main(String[] args) throws Exception {
-        // JavaMail.sendMail("shanukalakshan4567@gmail.com");
 
         loop: while (true) {
             Console console = System.console();
@@ -44,19 +44,15 @@ public class Email_Client {
                     System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
                     String givenDate = console.readLine();
                     Recipient.getRecipientBirthday(givenDate);
-
-                    // SendBirthDayMail.checkPerson(givenDate);
-                    // Recipient.getRecipientDetails(givenDate);
-                    SendBirthDayMail.sendBirthDayWishes();
+                    JavaMail.sendBirthDayWishes();
 
                     break;
                 case 4:
-                    // ReadWrite.read();
-
-                    // JavaMail.sendMail("sandundissanayake2000124@gmail.com", "Awada", "Ade Ube
-                    // Ange Hati Balapanko!");
-                    // JavaMail.sendMail("chalanganaOnline@gmail.com", "Awada", "Ado uber podi eka
-                    // bng!");
+                    // input format - yyyy/MM/dd (ex: 2018/09/17)
+                    // code to print the details of all the emails sent on the input date
+                    System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
+                    String getdate = console.readLine();
+                    ReadWrite.read(getdate);
 
                     break;
 
@@ -67,6 +63,7 @@ public class Email_Client {
                     break;
                 case 611:
                     // end program
+                    Serialization.serialization();
                     System.out.println("Program End!");
                     break loop;
 
@@ -79,4 +76,9 @@ public class Email_Client {
 // Office_friend: amal,kasunssckinfo@gmail.com,clerk,1900/2/6
 // Official:nimal,nimal @gmail.com,ceo
 // Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/2/4
-// Personal:shanu,sha,shanu@gmail.com,1998/7/27
+// Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
+
+// JavaMail.sendMail("sandundissanayake2000124@gmail.com", "Awada", "Ade Ube
+// Ange Hati Balapanko!");
+// JavaMail.sendMail("chalanganaOnline@gmail.com", "Awada", "Ado uber podi eka
+// bng!");

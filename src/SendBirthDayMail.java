@@ -1,8 +1,5 @@
 import java.text.SimpleDateFormat;
-import java.time.Month;
 import java.util.Calendar;
-
-import javax.management.monitor.Monitor;
 
 public class SendBirthDayMail {
 

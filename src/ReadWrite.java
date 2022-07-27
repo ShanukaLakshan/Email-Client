@@ -6,16 +6,19 @@ import java.util.Scanner;
 
 public abstract class ReadWrite {
 
-    static public void read() {
+    static public void read(String getdate) {
         try {
-            File data = new File("E:\\Sem 2\\Moodle\\Program Construction\\OOP\\OOP Project\\Email Client\\t.txt");
+            File data = new File("E:\\Sem 2\\Moodle\\Program Construction\\OOP\\OOP Project\\Email-Client\\emai.txt");
 
             Scanner input = new Scanner(data);
             String line;
 
             while (input.hasNextLine()) {
                 line = input.nextLine();
-                System.out.println(line);
+                String[] getNewDate = line.split(",");
+                if (getNewDate[3].equals(getdate)) {
+                    System.out.println(line);
+                }
                 // createObject(line);
             }
         } catch (Exception e) {
