@@ -1,4 +1,6 @@
 import java.io.Console;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Email_Client {
 
@@ -9,13 +11,13 @@ public class Email_Client {
 
         loop: while (true) {
             Console console = System.console();
-            System.out.println("Enter option type: \n"
+            System.out.println("\nEnter option type: \n"
                     + "1 - Adding a new recipient\n"
                     + "2 - Sending an email\n"
                     + "3 - Printing out all the recipients who have birthdays\n"
                     + "4 - Printing out details of all the emails sent\n"
                     + "5 - Printing out the number of recipient objects in the application\n"
-                    + "6 - Exit");
+                    + "6 - Exit\n");
             int option = Integer.parseInt(console.readLine());
             switch (option) {
                 case 1:
@@ -25,7 +27,7 @@ public class Email_Client {
                     break;
                 case 2:
                     System.out.println(
-                            "Enter detail following format to send an email :\n * input format - (email, subject, content) :");
+                            "Enter detail following format to send an email \t * input format - (email, subject, content) :");
 
                     String[] dataInputArray = console.readLine().split(",");
                     String emailAddres = dataInputArray[0];
@@ -35,20 +37,22 @@ public class Email_Client {
 
                     break;
                 case 3:
-                    System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
+                    System.out.println("Enter date following format\t * input format - yyyy/MM/dd (ex: 2018/09/17) :");
                     String givenDate = console.readLine();
                     Recipient.getRecipientBirthday(givenDate);
 
                     break;
                 case 4:
-                    System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
-                    // String getdate = console.readLine();
-                    // ReadWrite.read(getdate);
+                    System.out.println("Enter date following format\t * input format - yyyy/MM/dd (ex: 2018/09/17) :");
+                    String getdate = console.readLine();
+
                     SerializationNew.deserialization(JavaMail.emaildata);
                     for (int i = 0; i < JavaMail.emaildata.size(); i++) {
-                        System.out.print(JavaMail.emaildata.get(i) + " ");
+                        String[] emailDetails = JavaMail.emaildata.get(i).strip().split(",");
+                        if (emailDetails[emailDetails.length - 1].equals(getdate)) {
+                            System.out.println(JavaMail.emaildata.get(i).strip());
+                        }
                     }
-
                     break;
 
                 case 5:
@@ -59,7 +63,6 @@ public class Email_Client {
                     SerializationNew.serialization(JavaMail.emaildata);
                     System.out.println("Program End!");
                     break loop;
-
             }
         }
     }

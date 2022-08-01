@@ -108,7 +108,7 @@ public class JavaMail {
     public static String printDetail(String sendToEmailAddress, String subject, String content) throws IOException {
 
         String date = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
-        String saveData = sendToEmailAddress + "," + subject + "," + content + "," + date;
+        String saveData = sendToEmailAddress + "," + subject + "," + content + "," + date + "\n";
         // FileWriter writer = new FileWriter("emai.txt", true); // need to remove
         // writer.write(saveData + "\n");
         // writer.close();
