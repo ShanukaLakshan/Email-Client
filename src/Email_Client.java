@@ -1,9 +1,11 @@
 import java.io.Console;
-import java.util.*;
 
 public class Email_Client {
 
     public static void main(String[] args) throws Exception {
+
+        ReadWrite.readPreviousData();
+        // JavaMail.sendBirthDayWishes();
 
         loop: while (true) {
             Console console = System.console();
@@ -17,17 +19,11 @@ public class Email_Client {
             int option = Integer.parseInt(console.readLine());
             switch (option) {
                 case 1:
-                    // Official: nimal,nimal@gmail.com,ceo
-                    // Office_friend: kamal,kasunssckinfo@gmail.com,clerk,2000/2/4
-                    // Personal: sunil,nickname,kasunssckinfo@gmail.com,2000/2/6
                     System.out.println(
                             "give the detail following format\n  *  Official: nimal,nimal@gmail.com,ceo\n  *  Office_friend: kamal,kasunssckinfo@gmail.com,clerk,2000/2/4\n  *  Personal: sunil,<nick name>,kasunssckinfo@gmail.com,2000/2/6 ");
                     ReadWrite.write();
                     break;
                 case 2:
-                    // shanukalakshan4567@gmail.com, Testing1 , This is testing email
-                    // input format - email, subject, content
-                    // code to send an email
                     System.out.println(
                             "Enter detail following format to send an email :\n * input format - (email, subject, content) :");
 
@@ -35,35 +31,32 @@ public class Email_Client {
                     String emailAddres = dataInputArray[0];
                     String subject = dataInputArray[1];
                     String content = dataInputArray[2];
-                    JavaMail.sendMail(emailAddres, subject, content); // send a mail for given data
+                    JavaMail.sendMail(emailAddres, subject, content); // send new mail for given data
 
                     break;
                 case 3:
-                    // input format - yyyy/MM/dd (ex: 2018/09/17)
-                    // code to print recipients who have birthdays on the given date
                     System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
                     String givenDate = console.readLine();
                     Recipient.getRecipientBirthday(givenDate);
-                    JavaMail.sendBirthDayWishes();
 
                     break;
                 case 4:
-                    // input format - yyyy/MM/dd (ex: 2018/09/17)
-                    // code to print the details of all the emails sent on the input date
                     System.out.println("Enter date following format\n * input format - yyyy/MM/dd (ex: 2018/09/17) :");
-                    String getdate = console.readLine();
-                    ReadWrite.read(getdate);
+                    // String getdate = console.readLine();
+                    // ReadWrite.read(getdate);
+                    SerializationNew.deserialization(JavaMail.emaildata);
+                    for (int i = 0; i < JavaMail.emaildata.size(); i++) {
+                        System.out.print(JavaMail.emaildata.get(i) + " ");
+                    }
 
                     break;
 
                 case 5:
-                    // code to print the number of recipient objects in the application
                     System.out.println(
                             "Client List include number of " + Recipient.numberOfrecipient + " recipient objects.");
                     break;
                 case 611:
-                    // end program
-                    Serialization.serialization();
+                    SerializationNew.serialization(JavaMail.emaildata);
                     System.out.println("Program End!");
                     break loop;
 

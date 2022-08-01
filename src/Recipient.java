@@ -29,9 +29,14 @@ public abstract class Recipient {
 
     static void getRecipientBirthday(String givenday) {
         for (Recipient person : recipientArrayList) {
-            if ((person instanceof CloseFriend) && givenday.equals(((CloseFriend) person).getBirthday())) {
-                System.out.println(person.getName());
+            if ((person instanceof CloseFriend)) {
+                String[] birthDay = ((CloseFriend) person).getBirthday().split("/");
+                String[] enterd_date = givenday.split("/");
+                if (JavaMail.checkIsBirthdayToday(enterd_date, birthDay)) {
+                    System.out.println(person.getName());
+                }
             }
+
         }
     }
 
