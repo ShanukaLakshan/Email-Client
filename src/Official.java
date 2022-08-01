@@ -1,3 +1,4 @@
+// use Inheritance
 public class Official extends Recipient {
 
     private String designation;
@@ -7,6 +8,7 @@ public class Official extends Recipient {
         this.designation = designation;
     }
 
+    // use Encapsulation
     public String getDesignation() {
         return designation;
     }

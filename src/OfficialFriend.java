@@ -1,4 +1,4 @@
-
+// use Inheritance
 public class OfficialFriend extends CloseFriend {
     // attributes name,email,designation,birthday
     private String designation;
@@ -8,6 +8,7 @@ public class OfficialFriend extends CloseFriend {
         this.designation = designation;
     }
 
+    // use Encapsulation
     public String getDesignation() {
         return designation;
     }

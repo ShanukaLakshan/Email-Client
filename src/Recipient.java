@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+// use Abstraction
 public abstract class Recipient {
 
     static ArrayList<Recipient> recipientArrayList = new ArrayList<Recipient>();
@@ -13,6 +14,7 @@ public abstract class Recipient {
         numberOfrecipient++;
     }
 
+    // use Encapsulation
     public String getName() {
         return name;
     }

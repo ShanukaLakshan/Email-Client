@@ -1,3 +1,4 @@
+// use Inheritance
 public class CloseFriend extends Recipient {
 
     private String birthDay;
@@ -7,6 +8,7 @@ public class CloseFriend extends Recipient {
         this.birthDay = birthDay;
     }
 
+    // use Encapsulation
     public String getBirthday() {
         return birthDay;
     }

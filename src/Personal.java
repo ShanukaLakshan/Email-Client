@@ -8,6 +8,7 @@ public class Personal extends CloseFriend {
         this.nickName = nickName;
     }
 
+    // use Encapsulations
     public String getNickName() {
         return nickName;
     }
