@@ -29,15 +29,12 @@ public abstract class ReadWrite {
 
     static public void readPreviousData() {
         try {
-            File data = new File("E:\\Sem 2\\Moodle\\Program Construction\\OOP\\OOP Project\\Email-Client\\t.txt");
-
+            File data = new File("t.txt");
             Scanner input = new Scanner(data);
             String line;
-
             while (input.hasNextLine()) {
                 line = input.nextLine();
                 createObject(line);
-                // System.out.println(line);
             }
         } catch (Exception e) {
             e.printStackTrace();

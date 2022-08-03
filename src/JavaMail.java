@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -10,7 +11,6 @@ import java.util.logging.Logger;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
@@ -64,23 +64,51 @@ public class JavaMail {
         return null;
     }
 
+    public static void checkAndSend() throws ClassNotFoundException, IOException, FileNotFoundException {
+        String getdate = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
+
+        // JavaMail.emaildata = SerializationNew.deserialization();
+        for (int i = 0; i < emaildata.size(); i++) {
+            String[] emailDetails = emaildata.get(i).strip().split(",");
+            if (emailDetails[3].equalsIgnoreCase("2022/08/02")) {
+
+                // printDetail(emailDetails[0], emailDetails[1], emailDetails[2]);
+                // String saveData = emailDetails[0] + "," + emailDetails[1] + "," +
+                // emailDetails[1] + "," + getdate
+                // + "\n";
+                // System.out.println(saveData.strip());
+                // System.out.println(emaildata.get(i).strip() + " ---");
+                // System.out.println(emaildata.get(i).strip().equalsIgnoreCase(saveData));
+
+                // System.out.println(
+                // "---------------------------------------------------------------------------------------------------\nTo\t:"
+                // + emailDetails[0]
+                // + "\nSublect :" + emailDetails[1] + "\nContent :"
+                // + emailDetails[2]);
+            }
+            System.out.println(
+                    "---------------------------------------------------------------------------------------------------\nTo\t:"
+                            + emailDetails[0]
+                            + "\nSublect :" + emailDetails[1] + "\nContent :"
+                            + emailDetails[2]);
+
+        }
+
+    }
+
     public static void sendBirthDayWishes() throws Exception {
         String[] getdate = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime()).split("/");
 
         for (Recipient a : Recipient.recipientArrayList) {
-
             if (a instanceof Personal) {
                 String[] birthDay = ((Personal) a).getBirthday().split("/");
-
                 if (checkIsBirthdayToday(birthDay, getdate)) {
                     JavaMail.sendMail(a.getEmail(),
                             "Wish you a Happy BirthDay",
                             "hugs and love on your birthday.Shanu for personal recipients.");
                 }
-
             } else if (a instanceof OfficialFriend) {
                 String[] birthDay = ((OfficialFriend) a).getBirthday().split("/");
-
                 if (checkIsBirthdayToday(birthDay, getdate)) {
                     JavaMail.sendMail(a.getEmail(),
                             "Wish you a Happy BirthDay",
@@ -95,23 +123,16 @@ public class JavaMail {
         int currentMonth = Integer.parseInt(CurrentDate[1]);
         int day = Integer.parseInt(CheckDate[2]);
         int month = Integer.parseInt(CheckDate[1]);
-
         return (day == currentDay) && (month == currentMonth);
 
     }
 
-    // public static boolean checkIsBirthdayToday(int day, int month, int
-    // currentDay, int currentMonth) {
-    // return (day == currentDay) && (month == currentMonth);
-    // }
-
     public static String printDetail(String sendToEmailAddress, String subject, String content) throws IOException {
-
         String date = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
         String saveData = sendToEmailAddress + "," + subject + "," + content + "," + date + "\n";
-        // FileWriter writer = new FileWriter("emai.txt", true); // need to remove
-        // writer.write(saveData + "\n");
-        // writer.close();
+        FileWriter writer = new FileWriter("emai.txt", true);
+        writer.write(saveData + "\n");
+        writer.close();
         emaildata.add(saveData);
         return saveData;
     }

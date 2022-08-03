@@ -1,9 +1,9 @@
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class SendBirthDayMail {
+public class SendBirthDayMails {
 
-    public static void sendBirthDayWishes() throws Exception {
+    public static void sendBirthDayWishess() throws Exception {
         String[] date = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime()).split("/");
 
         int currentDay = Integer.parseInt(date[2]);
@@ -33,7 +33,7 @@ public class SendBirthDayMail {
                     System.out.println("Send to OfficialFriend " + a.getEmail());
                     // JavaMail.sendMail(a.getEmail(),
                     // "Wish you a Happy BirthDay",
-                    // "Shanu for an office friend, and hugs and love on your birthday. ");
+                    // "Shanu for an office friend, and hugs and love on your birthday.");
                 }
             }
         }

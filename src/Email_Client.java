@@ -1,23 +1,30 @@
 import java.io.Console;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.io.FileNotFoundException;
 
 public class Email_Client {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, FileNotFoundException {
 
+        JavaMail.emaildata = SerializationNew.deserialization();
         ReadWrite.readPreviousData();
+
         // JavaMail.sendBirthDayWishes();
+
+        for (int i = 0; i < Recipient.recipientArrayList.size(); i++) {
+            System.out.print(Recipient.recipientArrayList.get(i) + "\n");
+        }
+
+        // JavaMail.checkAndSend();
 
         loop: while (true) {
             Console console = System.console();
             System.out.println("\nEnter option type: \n"
-                    + "1 - Adding a new recipient\n"
-                    + "2 - Sending an email\n"
-                    + "3 - Printing out all the recipients who have birthdays\n"
+                    + "OK\t1 - Adding a new recipient\n"
+                    + "OK\t2 - Sending an email\n"
+                    + "OK\t3 - Printing out all the recipients who have birthdays\n"
                     + "4 - Printing out details of all the emails sent\n"
-                    + "5 - Printing out the number of recipient objects in the application\n"
-                    + "6 - Exit\n");
+                    + "OK\t5 - Printing out the number of recipient objects in the application\n"
+                    + "OK\t6 - Exit\n");
             int option = Integer.parseInt(console.readLine());
             switch (option) {
                 case 1:
@@ -46,11 +53,15 @@ public class Email_Client {
                     System.out.println("Enter date following format\t * input format - yyyy/MM/dd (ex: 2018/09/17) :");
                     String getdate = console.readLine();
 
-                    SerializationNew.deserialization(JavaMail.emaildata);
                     for (int i = 0; i < JavaMail.emaildata.size(); i++) {
                         String[] emailDetails = JavaMail.emaildata.get(i).strip().split(",");
-                        if (emailDetails[emailDetails.length - 1].equals(getdate)) {
-                            System.out.println(JavaMail.emaildata.get(i).strip());
+                        if (emailDetails[emailDetails.length - 1].equalsIgnoreCase(getdate)) {
+                            String[] mailData = JavaMail.emaildata.get(i).strip().split(",");
+                            System.out.println(
+                                    "---------------------------------------------------------------------------------------------------\nTo \t:"
+                                            + mailData[0]
+                                            + "\nSublect :" + mailData[1] + "\nContent :"
+                                            + mailData[2]);
                         }
                     }
                     break;
@@ -58,11 +69,13 @@ public class Email_Client {
                 case 5:
                     System.out.println(
                             "Client List include number of " + Recipient.numberOfrecipient + " recipient objects.");
+
                     break;
                 case 611:
                     SerializationNew.serialization(JavaMail.emaildata);
                     System.out.println("Program End!");
                     break loop;
+
             }
         }
     }

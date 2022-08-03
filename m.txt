@@ -1,28 +1,46 @@
-Personal: sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
-Office_friend: adono,kasunssckinfo@gmail.com,clerk,2000/2/4
-Office_friend: amal,kasunssckinfo@gmail.com,clerk,1900/2/6
-Official:nimal,nimal @gmail.com,ceo
-Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/2/4
-Personal: 1sunil,sunna,kasunssckinfo@gmail.com,1985/2/4
-Personal: 2sunil,sunna,kasunssckinfo@gmail.com,1995/2/4
-Personal: 3sunil,sunna,kasunssckinfo@gmail.com,1998/2/4
-Personal: 4sunil,sunna,kasunssckinfo@gmail.com,2005/2/4
-Personal:shanu,sha,shanu@gmail.com,1998/7/26
-Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/26
-Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/
-Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/26
-Office_friend: cahal,ssckinfo@gmail.com,clerk,1995/7/27
-Personal: sunil,nickname,kasunssckinfo@gmail.com,2000/2/6
-Personal: sunil,nickname,kasunssckinfo@gmail.com,2000/2/6
-Office_friend: kamal,kasunssckinfo@gmail.com,clerk,1998/2/4
-Personal: Shanuka,Shanu,shanukalakshan4567@gmail.com,1998/7/27
-Personal:shanu,sha,shanu@gmail.com,1998/7/27
-Personal:shanu,sha,shanu@gmail.com,1998/7/27
-Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
-Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
-Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
-Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
-Office_friend: cahal,ssckinfo@gmail.com,clerk,2001/07/27
-Personal: Shanuka,shanu,shanukalakshan456@gmail.com,1998/7/27
-Office_friend: kamal,kasunssckinfo@gmail.com,clerk,2001/11/12
-Office_friend: pakal,kasunssckinfo@gmail.com,clerk,2000/2/4
+------------shanukalakshan456@gmail.com,No Subl,details of all the emails,2022/08/03
+------------checkmail456@gmail.com,Gmail,details of all the emails,2022/08/03
+Preparing email !
+Mail Successfuly Sent!
+Preparing email !
+Mail Successfuly Sent!
+Preparing email !
+Mail Successfuly Sent!
+Preparing email !
+Mail Successfuly Sent!
+Preparing email !
+Mail Successfuly Sent!
+Preparing email !
+Mail Successfuly Sent!
+---------------------------------------------------------------------------------------------------
+To      :shanukalakshan456@gmail.com
+Sublect :No Subl
+Content :details of all the emails
+---------------------------------------------------------------------------------------------------
+To      :checkmail456@gmail.com
+Sublect :Gmail
+Content :details of all the emails
+---------------------------------------------------------------------------------------------------
+To      :checkmail2@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :hugs and love on your birthday.Shanu for personal recipients.
+---------------------------------------------------------------------------------------------------
+To      :checkmail3@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :hugs and love on your birthday.Shanu for personal recipients.
+---------------------------------------------------------------------------------------------------
+To      :checkmail4@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :hugs and love on your birthday.Shanu for personal recipients.
+---------------------------------------------------------------------------------------------------
+To      :checkmail6@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :Shanu for an office friend and hugs and love on your birthday.
+---------------------------------------------------------------------------------------------------
+To      :checkmail7@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :Shanu for an office friend and hugs and love on your birthday.
+---------------------------------------------------------------------------------------------------
+To      :checkmail8@gmail.com
+Sublect :Wish you a Happy BirthDay
+Content :Shanu for an office friend and hugs and love on your birthday.

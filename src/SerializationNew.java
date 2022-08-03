@@ -3,33 +3,25 @@ import java.util.ArrayList;
 
 public class SerializationNew {
 
-    static void serialization(ArrayList<String> data) throws IOException {
+    static void serialization(ArrayList<String> data)
+            throws IOException, ClassNotFoundException, FileNotFoundException {
         String savefile = "seridata.ser";
-        FileOutputStream file = new FileOutputStream(savefile, true);
+        FileOutputStream file = new FileOutputStream(savefile);
         ObjectOutputStream out = new ObjectOutputStream(file);
         out.writeObject(data);
         out.close();
         file.close();
     }
 
-    static void deserialization(ArrayList<String> data) throws ClassNotFoundException, IOException {
+    static ArrayList<String> deserialization() throws ClassNotFoundException, IOException, FileNotFoundException {
+        // ArrayList<String> data = new ArrayList<String>();
+
         String savefile = "seridata.ser";
         FileInputStream file = new FileInputStream(savefile);
         ObjectInputStream in = new ObjectInputStream(file);
         JavaMail.emaildata = (ArrayList<String>) in.readObject();
         in.close();
         file.close();
+        return JavaMail.emaildata;
     }
 }
-
-// ArrayList<String> data = new ArrayList<String>();
-// data.add("One");
-// data.add("Two");
-
-// data.add("Three");
-// Serialization.serialization(data);
-
-// Serialization.deserialization(data);
-
-// for (int i = 0; i < data.size(); i++)
-// System.out.print(data.get(i) + " ");
