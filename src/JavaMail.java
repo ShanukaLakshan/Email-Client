@@ -19,6 +19,7 @@ import javax.mail.internet.MimeMessage;
 public class JavaMail {
 
     public static ArrayList<String> emaildata = new ArrayList<String>();
+    public static ArrayList<String> sentmail = new ArrayList<String>();
 
     public static void sendMail(String sendToEmailAddress, String subject, String content) throws Exception {
 
@@ -65,33 +66,28 @@ public class JavaMail {
     }
 
     public static void checkAndSend() throws ClassNotFoundException, IOException, FileNotFoundException {
-        String getdate = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
+        // String getdate = new
+        // SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
 
-        // JavaMail.emaildata = SerializationNew.deserialization();
+        String getdate = "2022/08/08";
         for (int i = 0; i < emaildata.size(); i++) {
-            String[] emailDetails = emaildata.get(i).strip().split(",");
-            if (emailDetails[3].equalsIgnoreCase("2022/08/02")) {
+            String[] emailDetails = JavaMail.emaildata.get(i).strip().split(",");
+            if (emailDetails[emailDetails.length - 1].equalsIgnoreCase(getdate) && emailDetails[1]
+                    .equalsIgnoreCase("Wish you a Happy BirthDay")) {
 
-                // printDetail(emailDetails[0], emailDetails[1], emailDetails[2]);
-                // String saveData = emailDetails[0] + "," + emailDetails[1] + "," +
-                // emailDetails[1] + "," + getdate
-                // + "\n";
-                // System.out.println(saveData.strip());
-                // System.out.println(emaildata.get(i).strip() + " ---");
-                // System.out.println(emaildata.get(i).strip().equalsIgnoreCase(saveData));
-
-                // System.out.println(
-                // "---------------------------------------------------------------------------------------------------\nTo\t:"
+                // System.out.println(emailcount +
+                // ").
+                // ---------------------------------------------------------------------------------------------------\nTo\t:
+                // "
                 // + emailDetails[0]
-                // + "\nSublect :" + emailDetails[1] + "\nContent :"
-                // + emailDetails[2]);
+                // + "\nSubject : " + emailDetails[1] + "\nContent : "
+                // + emailDetails[2].strip());
+                sentmail.add(JavaMail.emaildata.get(i).strip());
             }
-            System.out.println(
-                    "---------------------------------------------------------------------------------------------------\nTo\t:"
-                            + emailDetails[0]
-                            + "\nSublect :" + emailDetails[1] + "\nContent :"
-                            + emailDetails[2]);
+        }
 
+        for (int i = 0; i < Recipient.recipientArrayList.size(); i++) {
+            System.out.println(Recipient.recipientArrayList.get(i));
         }
 
     }
@@ -116,6 +112,7 @@ public class JavaMail {
                 }
             }
         }
+        SerializationNew.serialization(JavaMail.emaildata);
     }
 
     public static boolean checkIsBirthdayToday(String[] CheckDate, String[] CurrentDate) {
@@ -131,7 +128,7 @@ public class JavaMail {
         String date = new SimpleDateFormat("yyyy/MM/dd").format(Calendar.getInstance().getTime());
         String saveData = sendToEmailAddress + "," + subject + "," + content + "," + date + "\n";
         FileWriter writer = new FileWriter("emai.txt", true);
-        writer.write(saveData + "\n");
+        writer.write(saveData);
         writer.close();
         emaildata.add(saveData);
         return saveData;

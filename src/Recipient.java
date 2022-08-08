@@ -28,15 +28,16 @@ public abstract class Recipient {
     }
 
     static void getRecipientBirthday(String givenday) {
+        int personNumber = 1;
         for (Recipient person : recipientArrayList) {
             if ((person instanceof CloseFriend)) {
                 String[] birthDay = ((CloseFriend) person).getBirthday().split("/");
                 String[] enterd_date = givenday.split("/");
                 if (JavaMail.checkIsBirthdayToday(enterd_date, birthDay)) {
-                    System.out.println(person.getName());
+                    System.out.println(personNumber + "). " + person.getName());
+                    personNumber++;
                 }
             }
-
         }
     }
 

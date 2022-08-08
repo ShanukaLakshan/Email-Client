@@ -1,5 +1,3 @@
-import javax.lang.model.element.Name;
-
 // use Inheritance
 public class OfficialFriend extends CloseFriend {
     // attributes name,email,designation,birthday

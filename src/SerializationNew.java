@@ -14,8 +14,6 @@ public class SerializationNew {
     }
 
     static ArrayList<String> deserialization() throws ClassNotFoundException, IOException, FileNotFoundException {
-        // ArrayList<String> data = new ArrayList<String>();
-
         String savefile = "seridata.ser";
         FileInputStream file = new FileInputStream(savefile);
         ObjectInputStream in = new ObjectInputStream(file);
@@ -23,5 +21,6 @@ public class SerializationNew {
         in.close();
         file.close();
         return JavaMail.emaildata;
+
     }
 }

@@ -30,11 +30,12 @@ public abstract class ReadWrite {
     static public void readPreviousData() {
         try {
             File data = new File("t.txt");
-            Scanner input = new Scanner(data);
-            String line;
-            while (input.hasNextLine()) {
-                line = input.nextLine();
-                createObject(line);
+            try (Scanner input = new Scanner(data)) {
+                String line;
+                while (input.hasNextLine()) {
+                    line = input.nextLine();
+                    createObject(line);
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
